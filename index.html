@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piadas do DudeX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Um cinza claro para o fundo da página */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333; /* Cor de texto padrão */
+        }
+
+        .container {
+            background-color: #FFFFFF; /* Branco para o container principal */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #CC092F; /* Vermelho Bradesco */
+            margin-bottom: 30px;
+        }
+
+        .joke-block {
+            background-color: #f9f9f9; /* Um fundo levemente diferente para cada bloco de piada */
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .joke-setup {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #222; /* Um pouco mais escuro para o setup */
+            min-height: 40px; /* Para alinhar visualmente mesmo com piadas de tamanhos diferentes */
+        }
+
+        .joke-punchline {
+            font-size: 1.1em;
+            margin-top: 15px;
+            color: #CC092F; /* Vermelho Bradesco para o punchline */
+            font-weight: bold;
+            display: none; /* Escondido por padrão */
+        }
+
+        .reveal-button {
+            background-color: #CC092F; /* Vermelho Bradesco */
+            color: #FFFFFF; /* Texto branco */
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .reveal-button:hover {
+            background-color: #A60726; /* Um vermelho mais escuro para o hover */
+        }
+
+        .separator {
+            border: 0;
+            height: 2px;
+            background-color: #CC092F; /* Vermelho Bradesco para o separador */
+            margin: 30px auto;
+            width: 80%;
+        }
+
+        .attribution {
+            margin-top: 30px;
+            font-style: italic;
+            color: #555; /* Cinza para a atribuição */
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Central de Piadas</h1>
+
+        <!-- Primeira Piada -->
+        <div class="joke-block">
+            <p class="joke-setup" id="joke1-setup">O que o pato disse para a pata?</p>
+            <button class="reveal-button" onclick="togglePunchline('joke1')">Revelar Resposta</button>
+            <p class="joke-punchline" id="joke1-punchline">Vem Quá!</p>
+        </div>
+
+        <hr class="separator">
+
+        <!-- Segunda Piada -->
+        <div class="joke-block">
+            <p class="joke-setup" id="joke2-setup">Por que o pinheiro não se perde na floresta?</p>
+            <button class="reveal-button" onclick="togglePunchline('joke2')">Revelar Resposta</button>
+            <p class="joke-punchline" id="joke2-punchline">Porque ele tem uma pinha (um mapinha)!</p>
+        </div>
+        
+        <hr class="separator">
+
+        <!-- Terceira Piada (Extra) -->
+        <div class="joke-block">
+            <p class="joke-setup" id="joke3-setup">Qual é o cúmulo da velocidade?</p>
+            <button class="reveal-button" onclick="togglePunchline('joke3')">Revelar Resposta</button>
+            <p class="joke-punchline" id="joke3-punchline">Sair na chuva e não se molhar, dar a volta no poste e se ver pelas costas!</p>
+        </div>
+
+
+        <p class="attribution">by DudeX</p>
+    </div>
+
+    <script>
+        function togglePunchline(jokeId) {
+            const punchline = document.getElementById(jokeId + '-punchline');
+            const button = event.target; // Pega o botão que foi clicado
+
+            if (punchline.style.display === 'none' || punchline.style.display === '') {
+                punchline.style.display = 'block';
+                button.textContent = 'Esconder Resposta';
+            } else {
+                punchline.style.display = 'none';
+                button.textContent = 'Revelar Resposta';
+            }
+        }
+    </script>
+
+</body>
+</html>
